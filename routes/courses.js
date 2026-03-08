@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const supabase = required('../supabaseClient')
+const supabase = require('../supabaseClient')
 const validateEnrollement = require('../middleware/validateEnrollment')
 
 // ROUTE 1
