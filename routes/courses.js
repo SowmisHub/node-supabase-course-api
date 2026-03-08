@@ -20,7 +20,7 @@ router.get('/courses', async (req, res) =>{
 router.post('/enroll', validateEnrollement, async (req, res) =>{
     const {student_name, course_id} = req.body
     const {data, error} = await supabase
-        .from('enrollements')
+        .from('enrollments')
         .insert([
             { student_name, course_id}
         ])
@@ -37,7 +37,7 @@ router.post('/enroll', validateEnrollement, async (req, res) =>{
 
 // ROUTE 3
 
-router.get('/courses/:id/enrollements', async (req, res) =>{
+router.get('/courses/:id/enrollments', async (req, res) =>{
     const courseId = req.params.id
     const { data, error } = await supabase
         .from('enrollments')
